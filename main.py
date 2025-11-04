@@ -4,14 +4,29 @@
 
 from employees import Employees
 from customers import Customers
+from orders import Orders
+
+def main():
+  employees = Employees()
+  customers = Customers()
+  orders = Orders()
+
+  while True:
+    print("\n ======================= The Manager =======================")
+    print("1. Employees Manager\n2. Customers Manager\n3. Orders Manager\n4. Exit")
+    
+    choice = input("Enter your choice: ").strip()
+    if choice == "1":
+      employees.employee_manager()
+    elif choice == "2":
+      customers.customer_manager()
+    elif choice == "3":
+      orders.orders_manager()
+    elif choice == "4":
+      print("Exiting the program...")
+      break
+    else:
+      print("Invalid choice. Please select again.")
 
 if __name__ == "__main__":
-  employees = Employees()
-  # # employees.view_employees()
-  # employees.view_employee_details()
-  # # employees.delete_employee(2, 'Mr.', 'Andrew', 'Fuller')
-  # employees.employee_manager()
-  # employees.employee_manager()
-
-  customers = Customers()
-  customers.customer_manager()
+  main()

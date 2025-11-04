@@ -10,4 +10,4 @@ class DataConnect:
       port = 5433
     )
     self.cursor = self.connection.cursor()
-    print("successfully connected to the database")
+    # print("successfully connected to the database")

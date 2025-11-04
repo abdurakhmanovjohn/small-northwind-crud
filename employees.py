@@ -50,16 +50,16 @@ class Employees:
       employee = self.db.cursor.fetchone()
 
       if not employee:
-          print(f"No employee found with ID {emp_id}. Try again or type 'b' to go back.")
+        print(f"No employee found with ID {emp_id}. Try again or type 'b' to go back.")
       else:
           print("\n========= EMPLOYEE DETAILS =========")
           fields = [
-              "Employee ID", "Last Name", "First Name", "Title", "Title of Courtesy",
-              "Birth Date", "Hire Date", "Address", "City", "Region", "Postal Code",
-              "Country", "Home Phone", "Extension", "Photo", "Notes"
+            "Employee ID", "Last Name", "First Name", "Title", "Title of Courtesy",
+            "Birth Date", "Hire Date", "Address", "City", "Region", "Postal Code",
+            "Country", "Home Phone", "Extension", "Photo", "Notes"
           ]
           for field, value in zip(fields, employee):
-              print(f"{field}: {value}")
+            print(f"{field}: {value}")
 
           input("\nPress Enter to continue...")
           return
