@@ -176,13 +176,15 @@ class Employees:
   def employee_manager(self):
     while True:
       print("\n ======================= Employees Manager =======================")
-      print("1. View Employees\n2. Add an Employee\n3. Edit an Employee\n4. Delete an Employee\n5. Go Back")
+      print("1. View Employees\n2. View Employees in detail\n3. Add an Employee\n4. Edit an Employee\n5. Delete an Employee\n6. Go Back")
       
       choice = input("Enter your choice: ").strip()
 
       if choice == "1":
         self.view_employees()
       elif choice == "2":
+         self.view_employee_details()
+      elif choice == "3":
         last_name = input("Last Name: ")
         first_name = input("First Name: ")
         title = input("Title: ")
@@ -191,7 +193,7 @@ class Employees:
         hire_date = input("Hire Date: ")
         address = input("Address: ")
         city = input("City: ")
-        region = input("Region: ")
+        region = self.get_input("Region: ", allow_null=True)
         postal_code = input("Postal Code: ")
         country = input("Country: ")
         home_phone = input("Home Phone: ")
@@ -200,7 +202,7 @@ class Employees:
         notes = self.get_input("Notes: ", allow_null=True)
 
         self.add_employee(last_name, first_name, title, title_of_courtesy, birth_date, hire_date, address, city, region, postal_code, country, home_phone, extension, photo, notes)
-      elif choice == "3":
+      elif choice == "4":
         self.view_employees()
         emp_id_input = input("Enter the Employee ID you want to edit: ").strip()
         if not emp_id_input.isdigit():
@@ -208,9 +210,9 @@ class Employees:
         else:
             emp_id = int(emp_id_input)
             self.edit_employee(emp_id)
-      elif choice == "4":
+      elif choice == "5":
          self.delete_employee()
-      elif choice == '5':
+      elif choice == '6':
         break
       else:
         print("Invalid choice. Try again.")
